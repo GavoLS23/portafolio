@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Bienvenido a mi portafolio</title>
+</head>
+<body>
+    <header class="title-name">
+        <h1>Gustavo de Jes&uacute;s Le&oacute;n Santos</h1>
+        <p>Egresado de Ingenieria en Tecnolog&iacute;as de la Informaci&oacute;n y Comunicaci&oacute;n</p>
+    </header>
+    <main class="container">        
+
+        <section class="menu">
+            <ul>
+                <li class="opcion" id="inicio" style="--i:6"><a href="#">Inicio</a></li>
+                <li class="opcion" id="conocimientos" style="--i:5"><a href="#">Conocimientos</a></li>
+                <li class="opcion" id="experiencia" style="--i:4"><a href="#">Experiencia</a></li>
+                <li class="opcion" id="practicas" style="--i:3"><a href="#">Practicas</a></li>
+                <li class="opcion" id="extras" style="--i:2"><a href="#">Extras</a></li>
+                <li class="opcion" id="contacto" style="--i:1"><a href="#">Contacto</a></li>
+            </ul>
+        </section>
+        
+        <section id="principal" class="principal">
+            <section id="principal-inicio" class="inicio item p-active">            
+                <img class="foto-personal" src="img/ing.jpg" alt="Imagen profesional para el portafolio">
+                <div class="description">
+                    <h2>Acerca de mi</h2>
+                    <p>
+                        Me considero una persona responsable, hábil en la resolución de problemas con lógica, siempre dispuesto a ver el mundo desde nuevas perspectivas. Me defino como una persona confiable, capaz de trabajar en equipo o liderarlo en caso de ser necesario.
+                    </p>
+                </div>
+            </section>
+            <section id="principal-conocimientos" class="conocimientos item">            
+                <div class="contenido-cono">
+                    <h2>Conocimientos</h2>
+                    <div class="galeria">
+                        <div class="grid-container">
+                          <div class="imagen" onmouseover="mostrarDesc('java')" onmouseout="ocultarDesc()">
+                            <span id="tooltip" class="tooltip">
+                            </span>
+                            <img src="img/logos/java.png">
+                          </div>
+                          <div class="imagen" onmouseover="mostrarDesc('php')" onmouseout="ocultarDesc()">
+                            <img src="img/logos/php.png">
+                          </div>
+                          <div class="imagen" onmouseover="mostrarDesc('csharp')" onmouseout="ocultarDesc()">
+                            <img src="img/logos/csharp.png" width="80px" height="80px">
+                          </div>
+                          <div class="imagen" onmouseover="mostrarDesc('python')" onmouseout="ocultarDesc()">
+                            <img src="img/logos/python.png">
+                          </div>
+                          <div class="imagen" onmouseover="mostrarDesc('git')" onmouseout="ocultarDesc()">
+                            <img src="img/logos/git.png" >
+                          </div>
+                          <div class="imagen" onmouseover="mostrarDesc('html')" onmouseout="ocultarDesc()">
+                            <img src="img/logos/html.png">
+                          </div>
+                          <div class="imagen" onmouseover="mostrarDesc('css')" onmouseout="ocultarDesc()">
+                            <img src="img/logos/css.png">
+                          </div>
+                          <div class="imagen" onmouseover="mostrarDesc('js')" onmouseout="ocultarDesc()">
+                            <img src="img/logos/js.png">
+                          </div>
+                          <div class="imagen" onmouseover="mostrarDesc('mysql')" onmouseout="ocultarDesc()">
+                            <img src="img/logos/mysql.png">
+                          </div>
+                        </div>
+                    </div>
+                </div>        
+            </section>
+            <section id="principal-experiencia" class="experiencia item">
+                <div class="contenido-exp">
+                    <h2>Mi experiencia</h2>
+                    <p><strong>Abril 2019</strong></p>
+                    <p>Mi primer experiencia en desarrollo de aplicaciones ocurrió durante la universidad. En conjunto con un grupo de compañeros trabajé en el desarrollo de un sistema de escritorio para una biblioteca. Este sistema fue hecho en el lenguaje C# y era capaz de registrar, consultar, actualizar y borrar. La base de datos fue hecha en MySQL, motor InnoDB y ademas contaba con funciones que procesaban cierta informacion. Actualmente trabajo reescribiendo el proyecto en mis tiempos libres, ya que hace tiempo que lo perdí. Puedes ver el reposiorio y el codigo <a href="#" class="text-white">aqui</a>.</p>                    
+                    <p><strong>Septiembre 2019</strong></p>
+                    <p>A los pocos meses tuve la fortuna de aprender a programar con buenas practicas en Java y desarroll&eacute; junto a una compañera de trabajo, un sistema de escritorio para la gestion de una liga de futbol en el municipio de Huauchinango, Puebla. La primera version de este sistema fue terminada con exito y existe un manual y un instalador que est&aacute;n justo <a href="#" class="text-white">aqui</a>.</p>
+                    <p><strong>Enero 2020</strong></p>
+                    <p>Al haber aprendido a desarrollar en Java, tambien aprend&iacute; a usarlo en paginas web por medio de tecnologias como JSP y Hibernate. Fue una copia del sistema en C# para la biblioteca, ahora estaba disponible en una pagina web estilizada con Bootstrap y una aquitectura MVC con MySQL. Puedes ver una pequeña demostración y el codigo justo <a href="#" class="text-white">aqui</a>.</p>
+                    <p><strong>Noviembre 2020</strong></p>
+                    <p>Para obtener el titulo de Tecnico Superior Universitario, en mi estad&iacute;a profesional, desarroll&eacute; un prototipo para un sistema que fuera capaz de gestionar las incidencias entre alumnos y maestros, es decir, justificar faltas de manera m&aacute;s r&aacute;pida y sencilla. Dicho prototipo se encuentra justo <a href="#" class="text-white">aqui</a>. No contiene documentaci&oacute;n ya que por el momento no está disponible el reporte de estad&iacute;a.</p>
+                    <p><strong>Mayo 2021</strong></p>
+                    <p>Para obtener el titulo de Ingeniero en Tecnologias de la Informacion, en mi estad&iacute;a profesional, desarroll&eacute; un prototipo de interfaces en Reactt Native para una aplicacion de gestion de informacion acerca de un festival de la region de Huauchinango, Puebla. Además del diseño de la base de datos y un api sencilla para la prueba de estos. Puedes ver el codigo justo <a href="#" class="text-white">aqui</a>.</p>
+                    <p><strong>Marzo 2022</strong></p>
+                    <p>Desde marzo del a&ntilde;o 2022 trabajo como profesor, impartiendo cursos de tecnologia en una peque&ntilde;a escuela dando cursos de informatica basica, diseño grafico, mantenimiento a computadoras, programacion y programas especiales como AUTOCAD o ASPEL COI. Cuento con practicas que he diseñado para ense&ntilde;ar a alumnos y se muestran en el apartado "Practicas".</p>
+                </div>
+            </section>
+            <section id="principal-practicas" class="practicas item">
+                <div class="contenido-prac">
+                    <h2>Practicas</h2>
+                    <p>En este apartado comparto algunas de las practicas que he creado para los cursos que he impartido.</p>
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                          <h2>Word</h2>
+                        </div>
+                        <div class="accordion-content">
+                          <p>Contenido 1</p>
+                        </div>
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                          <h2>Titulo 2</h2>
+                        </div>
+                        <div class="accordion-content">
+                          <p>Contenido 2</p>
+                        </div>
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                          <h2>Titulo 3</h2>
+                        </div>
+                        <div class="accordion-content">
+                          <p>Contenido 3</p>
+                        </div>
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h2>Titulo 4</h2>
+                          </div>
+                          <div class="accordion-content">
+                            <p>Contenido 4</p>
+                          </div>
+                    </div>                      
+                </div>
+            </section>
+            <section id="principal-extras" class="extras item">
+                <div class="contenido-ext">
+                    <h2>Hola! Estas son mis habilidades extra</h2>
+                </div>
+            </section>
+            <section id="principal-contacto" class="contacto item">
+                <div class="contenido-con">
+                    <h2>Hola! Contactame</h2>
+                </div>
+            </section>
+        </section>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

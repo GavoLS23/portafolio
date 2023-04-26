@@ -1,0 +1,105 @@
+/*Selector universal para retirar el relleno de todos los contenedores*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Ajustamos los elementos al centro dentro del body
+le damos un alto de toda la pantalla y le ponemos un color
+oscuro para el fondo.*/
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+}
+
+/*A nuestro contenedor le damos la propiedad para comportarse como un "wrap"
+y le damos un espacio de 40 pixeles entre cada elemento. Al mismo tiempo centramos
+todo lo que se encuentre dentro del contenedor.*/
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+/*Seleccionamos el div con la clase "progress" y le ponemos una posicion relativa
+un ancho y alto de 150px y un colo de texto blanco. Por ultimo, su fondo será
+de color mas claro que el fondo y el color que elegimos para nuestra barra.
+Se divide al 50%*/
+.container .progress{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    color: #fff;
+    background: #444 linear-gradient(to right, transparent 50%, var(--clr)0);
+}
+
+/*El porcentaje tiene que esar centrado y ademas utilizar un tamaño de fuente
+considerable para visualizar bien el numero. Ademas de un ancho de letra mas
+grande. */
+.container .progress h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    z-index: 1;
+    font-weight: 500;
+}
+/*Con este selector le damos un tamaño y ancho de letra al simbolo de 
+porcentaje.*/
+.container .progress h3 span{
+    font-size: 0.65em;
+    font-weight: 400 ;
+}
+
+/*Este selector es para los nombres de cada uno de los marcadores, 
+en este caso estamos marcando html, css y javascript. Transformamos las 
+letras en mayusculas y le damos el mismo color de fondo al texto.*/
+.container .progress h4{
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-weight: 500;
+    color: var(--clr);
+    text-transform: uppercase;
+}
+
+/*Con este selector empezamos a cambiar la forma de los circulos antes y despues.*/
+.container .progress::before{
+    content: '';
+    display: block;
+    height: 100%;
+    margin-left: 50%;
+    transform-origin: left;
+    border-radius: 0 100% 100% 0/50%;
+}
+/*Aqui rellenamos el circulo con un color oscuro.*/
+.container .progress::after{
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    background: #222;
+}
+
+/*Este selector calcula cuanto es el porcentaje que tiene que avanzar el color
+alrededor de la rueda. Solamente cuando sobrepase el 50%*/
+.container .progress::before{
+    background: var(--clr);
+    transform: rotate(calc( ( (var(--i) - 50 ) * 0.01turn )));
+}
+
+/*Si el valor es menor a 50%*/
+
+.container .progress.less::before{
+    background: #444;
+    transform: rotate(calc( ( (var(--i) ) * 0.01turn )));
+}

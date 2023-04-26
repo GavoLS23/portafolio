@@ -1,0 +1,86 @@
+/*Selector universal para quitar el relleno de todos los contenedores.*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*Centramos todo dentro del body, le damos el alto de pantalla
+y damos un fondo oscuro.*/
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:#091921;
+}
+
+/*Seleccionamos el area que será la calculadora y le damos 
+la propiedad para hacer una rejilla.*/
+.calculator{
+    position: relative;
+    display: grid;
+}
+
+/*Seleccionamos el lugar donde se escribiran los numeros, le damos un 
+alto de 100px, quitamos los bordes, alineamos el texto a la derecha
+un relleno de 10px hacia adentro y un tamaño de 18px.*/
+.calculator .value{
+    grid-column: span 4;
+    height: 100px;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 18px;
+}
+/*Marcamos los numeros y les damos una division
+en forma de rejilla para que se vea regular. Unicamente
+dejamos el fondo oscuro y su texto claro.*/
+.calculator span{
+    display: grid;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    background: #0c2835;
+    place-items: center;
+    border: 1px solid rgba(0, 0, 0, .1);   
+}
+
+/*Al darle click, el color del texto cambia a negro
+y el del fondo a verde.*/
+.calculator span:active{
+    background-color: #74ff3b;
+    color: #111;
+}
+
+/*Para el boton que va a limpiar la caja de texto, tendremos
+que usar otro color, en este caso, rosa. y le damos un ancho de 2 columnas-
+*/
+.calculator span.clear{
+    grid-column:span 2 ;
+    width: 120px;
+    background: #ff3077;
+}
+/*Al darle clic al boton rosa, cambiará su color a verde.*/
+.calculator span.clear:active{
+    background-color: #74ff3b;
+}
+
+/*Cambiamos el alto del boton para sumar, ya que 
+tiene un alto de 2 filas.*/
+.calculator span.plus{
+    grid-row: span 2;
+    height: 120px;
+}
+
+/*El boton para el resultado tendrá un color diferente:
+Azul.*/
+.calculator span.equal{
+    background: #03b1ff;
+}
+/*Y al darle clic, este cambiará de color a verde.*/
+.calculator span.equal:active{
+    background-color: #74ff3b;
+}

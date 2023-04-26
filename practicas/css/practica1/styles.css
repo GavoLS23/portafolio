@@ -1,0 +1,67 @@
+/*Selector universal para quitar el relleno*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Centramos todos los elementos dentro del body y 
+le damos al mismo un alto de toda la pantalla. 
+Por ulitmo le damos un fondo negro.*/
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+
+/*Utilizamos un contenedor con posicion relaiva para 
+que pueda estar en el centro y le damos un ancho de 100%
+ademas de centrar todos los elementos dentro de este contenedor.
+Tambien le damos un espaciado entre objetos de 40px.*/
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+    /*Esta propiedad se agrega casi al final, es el reflejo de las figuras que se pintan.*/
+    -webkit-box-reflect: below 2px linear-gradient(transparent, #000);
+}
+
+/*Hacemos cada cuadrado igual, con un degradado en 45 grado que se alterna entre 
+negro y verde. Ademas de darle un tamaño al relleno para evitar que se vea pixelado.
+Al final colocamos una animacion para desplazar el fondo suavemente.*/
+.container .box{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg,
+    #00f376 10%, 
+    transparent 10%, 
+    transparent 50%, 
+    #00f376 50%, 
+    #00f376 60%, 
+    transparent 60%, 
+    transparent 100% ) ;
+    background-size: 40px 40px;
+    /*Esta propiedad permite cambiar el angulo de las lineas*/
+    transform: rotate(calc(var(--i) * 90deg));
+    /*Esta propiedad permite cambiar el color de las lineas*/
+    filter: hue-rotate(calc(var(--i) * 90deg));
+    animation: animate 0.5s linear infinite;
+}
+
+/*Animacion que permite cambiar la posicion del fondo 40px
+Con ella se simula que todo lo que está dentro de los cuadrados se mueve.*/
+@keyframes animate {
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: 40px;
+    }
+}

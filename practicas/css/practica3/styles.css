@@ -1,0 +1,65 @@
+/*Selector universal para quitar el relleno*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Este será nuestro contenedor de todos lo orbes que se harán en
+pantalla. Se le da un fondo color negro ademas de esconder las barras
+de desplazamieno. Se le asigna una animacion que da vuelta cada 5s por 
+la rueda de color. */
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #001200;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    animation: changeColor 5s linear infinite;
+}
+/*Animacion que controla los colores.*/
+@keyframes changeColor {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+/*Esta es la posicion original de los puntos, ademas de su 
+tamaño original.*/
+span{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+/*Aqui seleccionamos el pseudoelemento que tiene la etiqueta
+span y le damos un fondo de color verde para guiarnos y su sombra.
+lo redondeamos con border-radius y quitamos los eventos de puntero.*/
+span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00ff0a;
+    transform: scale(0.1);
+    box-shadow: 0 0 10px #00ff0a,
+    0 0 20px #00ff0a,
+    0 0 30px #00ff0a,
+    0 0 60px #00ff0a,
+    0 0 80px #00ff0a,
+    0 0 100px #00ff0a;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 2s;
+}
+/*Declaramos una transicion que nos ayuda a suavizar la animation de escala
+cuando pasamos el mouse sobre cada uno de los elemenos span pinados en pantalla.*/
+span:hover::before{
+    transform: scale(1);
+    transition: 0s;
+}
