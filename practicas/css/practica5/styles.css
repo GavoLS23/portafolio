@@ -1,5 +1,75 @@
+/*Importamos desde Google Fonts una fuente para esta practica.*/
+@import url('https://fonts.googleapis.con/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/*Selector universal para quitar los rellenos de todos los contenedores, al mismo tiempo seleccionamos la fuente que importamos.*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*Centramos todos los elementos dentro del body, damos un fondo azul oscuro, una direction de elementos en columna y un espaciado entre elementos de 30px.*/
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    background: #1d2b3a;
+}
+/*La caja del input tendrá un ancho de 250px, ademas tendra una posicion relativa para que quede bien centrado,*/
+.inputBox{
+    position: relative;
+    width: 250px;
+}
+/*Dentro de la caja está el input, el cual tendra un ancho del 100%, un relleno de 10px, un fondo oscuro, esquinas redondeadas a 5px, con un tamaño de letra de 1em y un color blanco.*/
+.inputBox input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: #1d2b3a;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+}
+/*El elemento que será utilizado para marcar el nombre del requisito es "span", este debe estar en el centro de la caja del input y le daremos una transicion para que la animacion sea suave.*/
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    transition: 0.5s;
+
+}
+/*Ahora, cada vez que seleccionamos y llenamos el input, el span permanecerá en la parte superior.
+En especifico este, tiene un diseño de 2 lineas a los lados que permite leer en color azul las letras.
+*/
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+    color: #00dfc4;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+    letter-spacing: 0.2em;
+}
+
+/*Al seleccionar el segundo elemento, simplemente damos un fondo azul y un color de texto oscuro, ademas de un borde redondeado en 2px.*/
+.inputBox:nth-child(2) input:valid ~ span,
+.inputBox:nth-child(2) input:focus ~ span{
+    background: #00dfc4;
+    color: #1d2b3a;
+    border-radius: 2px;
+}
+/*Cuando el input este selecionado o lleno, el borde se pintará de azul.*/
+.inputBox input:valid,
+.inputBox input:focus{
+    border: 1px solid #00dfc4;
 }
