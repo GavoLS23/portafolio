@@ -1,9 +1,10 @@
+/*Selector universal para quitar los rellenos de todos los elementos*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+/*Centramos todos los elementos, colocamos un alto de pantalla fijo y rellenamos con un fondo en 45 grados que va de azul a rosa.*/
 body{
     display: flex;
     justify-content: center;
@@ -11,6 +12,7 @@ body{
     min-height: 100vh;
     background: linear-gradient(45deg, #03a9f4, #ff53a0);
 }
+/*En la lista desordenada damos una direccion a los elementos para que vayan en columna, ademas de una transicion para suavizar la animacion que tiene la lista.*/
 ul{
     position: relative;
     transform-style: preserve-3d;
@@ -20,6 +22,8 @@ ul{
     gap: 0;
     transition: 0.5s;
 }
+
+/*Esta parte es la mas interesante, aqui se encuentran los estilos para cada uno de los rectangulos que contienen la informacion de la notificacion. Tiene un fondo blanco, espaciado de 20px, una trasicion de 0.5 segundos y un retraso de la misma con el valor de la variable "--i" que se encuentra declarada en el HTML.*/
 ul li{
     position: relative;
     list-style: none;
@@ -36,38 +40,43 @@ ul li{
     transition: 0.5s;
     transition-delay: calc(var(--i) * 0.5s);
 }
-
+/*Seleccionamos el primer elemento para llevalo a un sitio en la parte de atras y ademas darle una opacidad media.*/
 ul li:nth-child(1){
     transform: translateZ(-75px) translateZ(20px);
     opacity: 0.6;
 }
+/*Seleccionamos el tercer elemento  y lo colocamos delante del segundo elemento.*/
 ul li:nth-child(3){
     transform: translateZ(75px) translateZ(-30px);
     background: #eee;
 }
+/*Por ultimo sleccionamos el 4to elemento y lo enviamos hasta el frente*/
 ul li:nth-child(4){
     transform: translateZ(150px) translateZ(-75px);
     opacity: 0.6;
     background: #fff;
 }
-
+/*Al passar el mouse sobre la lista, el espaciado entre elementos cambia 30px.*/
 ul:hover{
     gap: 30px;
 }
+/*Regresamos todos los elementos a su lugar.Restauramos el color de fondo y la opacidad.*/
 ul:hover li{
     opacity: 1;
     background: #fff;
     transform: translateZ(0px) translateY(0px);
 }
-
+/*Delimitamos el tamaño de la imagen a 70px*/
 ul li img{
     max-width: 70px;
     border-radius: 4px;
 }
+/*El ancho del contenedor del contenido será del 100% y cada vez que pasemos el cursos sobre el contenido se pondrá el cursor de la manita.*/
 ul li .content{
     width: 100%;
     cursor: pointer;
 }
+/*Seleccionamos el texto y cambiamos tanto el ancho, como los colores y su posicion.*/
 ul li .content h4{
     font-weight: 600;
     color: #333;

@@ -1,10 +1,11 @@
+/*Selector universal para quitar los rellenos de todos los contenedores ademas de colocar una fuente especifica.*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
+/*Centramos los elementos dentro del body y colocamos un fondo oscuro. Damos un alto de toda la pantalla.*/
 body{
     display: flex;
     justify-content: center;
@@ -12,7 +13,7 @@ body{
     min-height: 100vh;
     background: #161623;
 }
-
+/*Con este selector, ubicamos un circulo en la esquina inferior derecha, que tiene un relleno degradado de rojo a rosa.*/
 body::before{
     content: '';
     position: absolute;
@@ -23,6 +24,7 @@ body::before{
     background:linear-gradient(#f00, #f0f);
     clip-path: circle(30% at right 70%);
 }
+/*Aqui ubicamos un circulo mas pequeño en la esquina superior izquierda con un relleno de azul a rosa.*/
 body::after{
     content: '';
     position: absolute;
@@ -33,7 +35,7 @@ body::after{
     background:linear-gradient(#2196f3, #e91e63);
     clip-path: circle(20% at 10% 10%);
 }
-
+/*Dentro del contenedor alienamos todos los elementos al centro y damos una propiedad de rejilla. Ademas colocamos un max al ancho del contenedor.*/
 .container{
     position: relative;
     display: flex;
@@ -43,6 +45,8 @@ body::after{
     flex-wrap: wrap;
     z-index: 1;
 }
+
+/*En este selector, realizamos las tarjetas, aqui es donde toman ese tono transparente que se muestra en la practica. */
 .container .card{
     position: relative;
     width: 280px;
@@ -55,10 +59,13 @@ body::after{
     display: flex;
     justify-content: center;
     align-items: center;
+    /*Ponemos unicamente 2 bordes para simular el 3D*/
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
+    /*Agregamos un filtro que permitirá ver el fondo con una opacidad.*/
     backdrop-filter: blur(5px);
 }
+/*Ubicamos el contenido de las tarjetas y les damos una transformacion para que suban las letras. Una opacidad de  y  una transicion de 0.5s para suavizar la animacion.*/
 .container .card .content{
     padding: 20px;
     text-align: center;
@@ -66,11 +73,13 @@ body::after{
     opacity: 0;
     transition: .5s;
 }
+/*Al pasar el mouse por encima, se vuelve a transformar y dejamos la opacidad justa para ver el contenido de la tarjeta.*/
 .container .card:hover .content{
     transform: translateY(0px);
     opacity: 1;
 }
 
+/*Seleccionamos el numero de la tarjeta y le damos un color transparente.*/
 .container .card .content h2{
     position: absolute;
     top: -80px;
@@ -79,16 +88,19 @@ body::after{
     color: rgba(255, 255, 255, 0.1);
     pointer-events: none;
 }
+/*Seleccionamos el texto del titulo y le damos un color blanco ademas de agrandar el tamaño.*/
 .container .card .content h3{
     font-size: 1.8em;
     color: #fff;
     z-index: 1;
 }
+/*Volvemos blanco el texto ademas de aumentar su anchura y declarar un tamaño de 1em para los valores dentro del parrafo.*/
 .container .card .content p{
     font-size: 1em;
     color: #fff;
     font-weight: 100;
 }
+/*En este selector se encuentra el boton para leer mas, tiene un fondo blanco y el color de las letras es oscuro, ademas de no contar con estilos de texto.*/
 .container .card .content a{
     position: relative;
     display: inline-block;
