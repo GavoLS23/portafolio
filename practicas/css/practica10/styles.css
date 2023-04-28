@@ -1,9 +1,11 @@
+/*Selector universal para quitar los rellenos de todos los elementos.*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+/*Centramos los elementos dentro del body y fijamos el fondo oscuro.*/
 body{
     display: flex;
     justify-content: center;
@@ -11,6 +13,7 @@ body{
     min-height: 100vh;
     background: #23243a;
 }
+/*Este selector es la caja donde se encuentra nuestro formulario, es el que permitirá hacer el efecto de las luces.*/
 .box{
     position: relative;
     width: 380px;
@@ -19,6 +22,7 @@ body{
     border-radius: 8px;
     overflow: hidden;
 }
+/*Los pseudoelementos son utilizados para realizar las luces de fondo azules, tienen una transition de giro alrededor de la caja.*/
 .box::before{
     content: '';
     position: absolute;
@@ -44,6 +48,7 @@ body{
     animation: animate 6s linear infinite;
     animation-delay: -3s;
 }
+/*Aqui se encuentran las "luces" rosas, las cuales son hechas por medio de un span para evitar interferencias con las luces azules.*/
 .borderLine{
     position: absolute;
     top: 0;
@@ -75,6 +80,7 @@ body{
     animation: animate 6s linear infinite;
     animation-delay: -4.5s;
 }
+/*Esta animacion permite ver el giro de las luces alrededor de la caja.*/
 @keyframes animate{
     0%{
         transform: rotate(0deg);
@@ -83,7 +89,7 @@ body{
         transform: rotate(360deg);
     }
 }
-
+/*Con este selector el formulario tiene un estilo oscuro, ademas de acoplar sus elementos en forma de columna.*/
 .box form{
     position: absolute;
     inset: 4px;
@@ -94,18 +100,20 @@ body{
     display: flex;
     flex-direction: column;
 }
+/*Selecionamos el titulo del formulario y lo pintamos de blanco para poder verlo mejor. Le damos un espaciado y lo centramos.*/
 .box form h2{
     color: #fff;
     font-weight: 500;
     text-align: center;
     letter-spacing: 0.1em;
 }
-
+/*Le damos un estilo a las cajas donde estará el texto.*/
 .box form .inputBox{
     position: relative;
     width: 300px;
     margin-top: 35px;
 }
+/*Estilizamos el input para darle el aspecto de una caja de texto transparente con un texto blanco.*/
 .box form .inputBox input{
     position: relative;
     width: 100%;
@@ -120,6 +128,7 @@ body{
     transition: 0.5s;
     z-index: 10;
 }
+/*Quitamos del span todos los eventos de punero y al mismo iempo le ponemos un relleno y una transicion para suavizar los movimientos.*/
 .box form .inputBox span{
     position: absolute;
     left: 0;
@@ -130,13 +139,14 @@ body{
     letter-spacing: 0.05em;
     transition: 0.5s;
 }
+/*En caso de que las cajas de texto esten seleccionadas o llenas, los span ve quedarán en la parte superior y tendrán un color blanco en la letra.*/
 .box form .inputBox input:valid ~ span,
 .box form .inputBox input:focus ~ span{
     color: #fff;
     font-size: 0.75em;
     transform: translateY(-34px);
 }
-
+/*Este elemento i, permitirá simular la linea que aparece debajo del span para convertirse en una barra-*/
 .box form .inputBox i{
     position: absolute;
     left: 0;
@@ -149,11 +159,13 @@ body{
     transition: 0.5s;
     pointer-events: none;
 }
+/*Si la caja de texto está seleccionada, o tiene un relleno, este cambiará el alto para convertirse en el fondo de las cajas de texto.*/
 .box form .inputBox input:valid ~ i,
 .box form .inputBox input:focus ~ i{
     height: 44px;
 }
 
+/*Por ultimo estilizamos todos los links que tenemos al final, para registro, para contraseña olvidada y el boton.*/
 .box form .links{
     display: flex;
     justify-content: space-between;
@@ -168,6 +180,7 @@ body{
 .box form .links a:nth-child(2){
     color: #fff;
 }
+/*Damos al boton un fondo de color blanco, letras negras y anchas, ademas de centrarlas.*/
 .box form input[type="submit"]{
     border: none;
     outline: none;
@@ -180,6 +193,7 @@ body{
     width: 100px;
     margin-top: 10px;
 }
+/*Al darle clic al boton, este se volverá un poco mas opaco.*/
 .box form input[type="submit"]:active{
     opacity: 0.8;
 }

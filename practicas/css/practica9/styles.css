@@ -1,9 +1,11 @@
+/*Selector universal para quitar el relleno de todos los elementos disponibles en el documento.*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+/*Centramos los elementos dentro de nuestra seccion y damos un alto y ancho de toda la pantalla. Fijamos el fondo con una imagen oscura, la centramos y despues cubrimos toda la pantalla con el.*/
 section{
     display: flex;
     justify-content: center;
@@ -14,6 +16,7 @@ section{
     background-position: center;
     background-size: cover;
 }
+/*Estilizamos la caja donde va nuestro formulario, ya que con este haremos el efecto de un vidrio, damos un fondo transparente y un filtro para marcar el efecto. El alto y ancho son de 400px y 450px respectivamente.*/
 .form-box{
     position: relative;
     width: 400px;
@@ -26,17 +29,20 @@ section{
     justify-content: center;
     align-items: center;
 }
+/*El texto para el titulo del formulario es de color blanco, al mismo tiempo está centrado y tiene un tamaño considerable.*/
 h2{
     font-size: 2em;
     color: #fff;
     text-align: center;
 }
+/*Estilizamos las secciones donde van a ir las cajas de texto, las cuales son de borde inferior blanco unicamente.*/
 .inputBox{
     position: relative;
     margin: 30px 0;
     width: 310px;
     border-bottom: 2px solid #fff;
 }
+/*Este selector consiste marcar los labels de las cajas de texto. Ademas de que se le da una transicion para suavizar las animaciones.*/
 .inputBox label{
     position: absolute;
     top: 50%;
@@ -47,12 +53,13 @@ h2{
     pointer-events: none;
     transition: 0.5s;
 }
-
+/*Una vez que las cajas de texto son seleccionadas o validadas el label se queda en la parte superior.*/
 input:focus ~ label,
 input:valid ~ label{
     top: -5px;
     content: '';
 }
+/*Estilizamos la caja de texto para evitar que choque con el fondo de la caja que hicimos ya-*/
 .inputBox input{
     width: 100%;
     height: 50px;
@@ -63,6 +70,7 @@ input:valid ~ label{
     padding: 0 35px 0 5px;
     color: #fff;
 }
+/*Por ultimo en la caja, ubicamos los elementos que son iconos.*/
 .inputBox ion-icon{
     position: absolute;
     right: 8px;
@@ -70,6 +78,7 @@ input:valid ~ label{
     font-size: 1.2em;
     top: 20px;
 }
+/*Las siguienes lineas de codigo permitiran estilizar los enlaces que se encuentran en la parte baja del formulario.*/
 .forget{
     margin: -15px 0 15px;
     font-size: .9em;
@@ -80,13 +89,16 @@ input:valid ~ label{
 .forget label input{
     margin-right: 3px;
 }
+/*Quitamos la decoracion de todos los enlaces.*/
 .forget label a{
     color: #fff;
     text-decoration: none;
 }
+/*Al pasar el mouse por encima, los enlaces empiezan a subrayarse.*/
 .forget label a:hover{
     text-decoration: underline;
 }
+/*Estilizamos el boton que nos dará acceso al login y lo ubicamos al final del formulario hacia el lado izquierdo. Este tiene fondo blanco y texto negro.*/
 button{
     width: 100%;
     height: 40px;
@@ -98,6 +110,7 @@ button{
     font-size: 1em;
     font-weight: 600;
 }
+/*Este selector estiliza los enlaces de registro y les da el mismo comportamiento que a los anteriores.*/
 .register{
     font-size: .9em;
     color: #fff;
